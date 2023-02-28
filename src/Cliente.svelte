@@ -1,10 +1,9 @@
 <script>
-    export let pieza = {
+    export let cliente = {
         nombre: "",
-        precio: 0,
-        material: "",
-        color: "",
-        peso: 0,
+        apellidos: "",
+        direccion: "",
+        categoria: "",
     };
 </script>
 
@@ -17,42 +16,33 @@
                         >Nombre:
                     </label><input
                         id="nombre"
-                        bind:value={pieza.nombre}
+                        bind:value={cliente.nombre}
                         class="nombre"
                     />
                 </div>
                 <div class="col-12 row">
-                    <label class="col-form-label" for="precio"
-                        >Precio:
+                    <label class="col-form-label" for="apellidos"
+                        >Apellidos:
                     </label><input
-                        id="precio"
-                        bind:value={pieza.precio}
-                        class="precio"
+                        id="apellidos"
+                        bind:value={cliente.apellidos}
+                        class="apellidos"
                     />
                 </div>
                 <div class="col-12 row">
-                    <label class="col-form-label" for="material"
-                        >Material:
+                    <label class="col-form-label" for="direccion"
+                        >Dirección:
                     </label><input
-                        id="material"
-                        bind:value={pieza.material}
-                        class="material"
+                        id="direccion"
+                        bind:value={cliente.direccion}
+                        class="direccion"
                     />
-                    <label class="col-form-label" for="color"
-                        >Color:
+                    <label class="col-form-label" for="categoria"
+                        >Categoría:
                     </label><input
-                        id="color"
-                        bind:value={pieza.color}
-                        class="color"
-                    />
-                </div>
-                <div class="col-12 row">
-                    <label class="col-form-label" for="peso"
-                        >Peso (g):
-                    </label><input
-                        id="peso"
-                        bind:value={pieza.peso}
-                        class="peso"
+                        id="categoria"
+                        bind:value={cliente.categoria}
+                        class="categoria"
                     />
                 </div>
             </form>

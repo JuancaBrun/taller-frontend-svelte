@@ -29,18 +29,30 @@
 
         switch (tipo) {
             case "insertar":
-                clase = "btn btn-insertar";
+                clase = "btn btn-insertar btn-success col-6";
                 break;
             case "modificar":
-                clase = "btn btn-modificar";
+                clase = "btn btn-modificar btn-warning col-6";
                 break;
             case "eliminar":
-                clase = "btn btn-eliminar";
+                clase = "btn btn-eliminar btn-danger col-6";
                 break;
             default:
         }
 
-        url = URL.piezas;
+        switch (coleccion) {
+            case "piezas":
+                url = URL.piezas;
+                break;
+            case "vehiculos":
+                url = URL.vehiculos;
+                break;
+            case "clientes":
+                url = URL.clientes;
+                break;
+            default:
+                break;
+        }
     });
 
     function insertar() {
@@ -58,7 +70,7 @@
             fetch(url, opciones)
                 .then((res) => res.json())
                 .then((data) => {
-                    [...$jsonData, data];
+                    $jsonData = [...$jsonData, data];
                     ok();
                 })
                 .catch((err) => ko());
@@ -113,12 +125,12 @@
 
 <style>
     .btn {
-        font-weight: bold;
-        padding-left: 20px;
-        padding-right: 20px;
+        /* font-weight: bold; */
+        /* padding-left: 20px; */
+        /* padding-right: 20px; */
         cursor: pointer;
         border-radius: 3px;
-        font-size: 1em;
+        font-size: 15px;
         transition: all 0.3s ease-in-out;
     }
     .btn:hover {

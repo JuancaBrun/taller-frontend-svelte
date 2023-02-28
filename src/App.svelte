@@ -7,7 +7,8 @@
 
 	const URL = {
 		piezas: "https://tallermecanico.herokuapp.com/api/piezas",
-		// piezas: "https://tiendabackend.fly.dev/api/articulos/",
+		vehiculos: "https://tallermecanico.herokuapp.com/api/vehiculos",
+		clientes: "https://tallermecanico.herokuapp.com/api/clientes",
 	};
 
 	setContext("URL", URL);
@@ -25,13 +26,12 @@
 	:global(body) {
 		margin: 0 auto;
 		padding: 0;
-		font-family: "Aclonica";
-		background-color: #1b203e;
-		color: white;
 	}
 
 	:global(main) {
 		padding-bottom: 100px;
+		background-color: #1b203e;
+		color: white;
 	}
 
 	:global(h1) {

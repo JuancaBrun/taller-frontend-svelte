@@ -6,7 +6,9 @@
     <ul>
         <li class="menu-item">
             <Link to="/"
-                ><span id="inicio-link" class="menu-link">🏠</span></Link
+                ><span id="inicio-link" class="menu-link"
+                    ><img src="../favicon.ico" alt="" /></span
+                ></Link
             >
         </li>
         <li class="menu-item">
@@ -37,20 +39,23 @@
         display: flex;
         justify-content: space-around;
         list-style-type: none;
+        align-items: center;
     }
     .menu-item {
         font-size: 20px;
     }
-
+    .menu-item img {
+        width: 50px;
+    }
     .menu-link {
         text-decoration: none;
         color: white;
     }
 
     @media all and (min-width: 600px) {
-        #inicio-link::after {
+        /* #inicio-link::after {
             content: "Inicio";
-        }
+        } */
 
         #piezas-link::after {
             content: "Piezas";

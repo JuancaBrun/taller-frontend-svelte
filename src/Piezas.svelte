@@ -21,20 +21,25 @@
         : $jsonData;
 </script>
 
-<h1>Piezas</h1>
-<Buscador bind:busqueda />
-<p>Insertar pieza:</p>
-<Pieza {pieza}>
-    <Boton documento={pieza} tipo="insertar" coleccion="piezas" />
-</Pieza>
-<p>Listado todas</p>
+<div class="d-flex justify-content-end">
+    <Buscador bind:busqueda />
+</div>
+<h2 class="text-center">Insertar pieza:</h2>
+<div class="card-group row mx-0">
+    <div class="col-sm-6 col-md-4 col-lg-3 mx-auto">
+        <Pieza {pieza}>
+            <Boton documento={pieza} tipo="insertar" coleccion="piezas" />
+        </Pieza>
+    </div>
+</div>
+<h2 class="text-center mt-5">Colección de piezas:</h2>
 
 <div class="piezas-container">
-    <div class="card-group row">
+    <div class="card-group row mx-0">
         {#each piezas as pieza}
-            <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="col-sm-6 col-md-4 col-lg-3 mx-0">
                 <Pieza {pieza}>
-                    <div style="text-align: right">
+                    <div class="row">
                         <Boton
                             documento={pieza}
                             tipo="modificar"
