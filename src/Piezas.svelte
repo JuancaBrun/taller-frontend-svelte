@@ -24,7 +24,7 @@
 <h1>Piezas</h1>
 <Buscador bind:busqueda />
 <p>Insertar pieza:</p>
-<Pieza bind:pieza>
+<Pieza {pieza}>
     <Boton documento={pieza} tipo="insertar" coleccion="piezas" />
 </Pieza>
 <p>Listado todas</p>
@@ -34,10 +34,18 @@
         {#each piezas as pieza}
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <Pieza {pieza}>
-                    <!-- <div style="text-align: right">
-          <Boton documento={cliente} tipo="modificar" coleccion="clientes" />
-          <Boton documento={cliente} tipo="eliminar" coleccion="clientes" />
-        </div> -->
+                    <div style="text-align: right">
+                        <Boton
+                            documento={pieza}
+                            tipo="modificar"
+                            coleccion="piezas"
+                        />
+                        <Boton
+                            documento={pieza}
+                            tipo="eliminar"
+                            coleccion="piezas"
+                        />
+                    </div>
                 </Pieza>
             </div>
         {/each}

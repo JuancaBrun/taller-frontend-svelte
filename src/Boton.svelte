@@ -4,7 +4,7 @@
     import { jsonData } from "./store";
 
     export let tipo = "insertar";
-    export let coleccion = "articulos";
+    export let coleccion = "piezas";
     export let documento = {};
 
     let handler = () => {};
@@ -14,8 +14,31 @@
     const URL = getContext("URL");
 
     onMount(() => {
-        handler = insertar;
-        clase = "btn btn-insertar";
+        switch (tipo) {
+            case "insertar":
+                handler = insertar;
+                break;
+            case "modificar":
+                handler = modificar;
+                break;
+            case "eliminar":
+                handler = eliminar;
+                break;
+            default:
+        }
+
+        switch (tipo) {
+            case "insertar":
+                clase = "btn btn-insertar";
+                break;
+            case "modificar":
+                clase = "btn btn-modificar";
+                break;
+            case "eliminar":
+                clase = "btn btn-eliminar";
+                break;
+            default:
+        }
 
         url = URL.piezas;
     });
@@ -25,23 +48,54 @@
             Object.keys(documento).length > 1 &&
             Object.values(documento).every((x) => x !== undefined && x != "")
         ) {
-            let opciones = {
+            const opciones = {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify(documento),
             };
-            console.log("body: " + opciones.body);
             fetch(url, opciones)
                 .then((res) => res.json())
                 .then((data) => {
                     [...$jsonData, data];
                     ok();
-                    console.log("Listo: " + data);
                 })
                 .catch((err) => ko());
+        } else {
+            ko();
         }
+    }
+
+    function modificar() {
+        const opciones = {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(documento),
+        };
+        fetch(url + "/" + documento._id, opciones)
+            .then((res) => res.json())
+            .then((data) => ok())
+            .catch((err) => ko());
+    }
+
+    function eliminar() {
+        const opciones = {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(documento),
+        };
+        fetch(url + "/" + documento._id, opciones)
+            .then((res) => res.json())
+            .then((data) => {
+                $jsonData = $jsonData.filter((x) => x._id !== data._id);
+                ok();
+            })
+            .catch((err) => ko());
     }
 
     let ok = () => {
@@ -78,5 +132,21 @@
 
     .btn-insertar::after {
         content: " Insertar";
+    }
+
+    .btn-modificar::before {
+        content: "💱";
+    }
+
+    .btn-modificar::after {
+        content: " Modificar";
+    }
+
+    .btn-eliminar::before {
+        content: "❌";
+    }
+
+    .btn-eliminar::after {
+        content: " Eliminar";
     }
 </style>
