@@ -26,6 +26,8 @@
 	:global(body) {
 		margin: 0 auto;
 		padding: 0;
+		background-color: #1b203e;
+		color: white;
 	}
 
 	:global(main) {
