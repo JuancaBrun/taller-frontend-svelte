@@ -16,6 +16,7 @@
                     <label class="col-form-label" for="marca"
                         >Marca:
                     </label><input
+                        required
                         id="marca"
                         bind:value={vehiculo.marca}
                         class="marca"
@@ -25,6 +26,7 @@
                     <label class="col-form-label" for="modelo"
                         >Modelo:
                     </label><input
+                        required
                         id="modelo"
                         bind:value={vehiculo.modelo}
                         class="modelo"
@@ -34,6 +36,7 @@
                     <label class="col-form-label" for="version"
                         >Versión:
                     </label><input
+                        required
                         id="version"
                         bind:value={vehiculo.version}
                         class="version"
@@ -41,6 +44,7 @@
                     <label class="col-form-label" for="color"
                         >Color:
                     </label><input
+                        required
                         id="color"
                         bind:value={vehiculo.color}
                         class="color"
@@ -48,6 +52,8 @@
                 </div>
                 <div class="col-12 row">
                     <label class="col-form-label" for="anyo">Año: </label><input
+                        required
+                        type="number"
                         id="anyo"
                         bind:value={vehiculo.anyo}
                         class="anyo"
@@ -66,29 +72,12 @@
         border-radius: 10px;
         margin: 10px;
     }
-    /*
-    .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
-    }
 
-    input {
-        background-color: inherit;
-        padding: 10px;
-        font-size: 14px;
-        color: black;
-        border: 0;
-        outline: none;
-        margin-left: 5px;
-        margin-bottom: 4px;
-        max-width: 140px;
-    } */
-
-    /* input:focus {
+    input:focus {
         background-color: wheat;
     }
 
-    input:required:invalid,
     input:focus:invalid {
         background-color: lightpink;
-    } */
+    }
 </style>

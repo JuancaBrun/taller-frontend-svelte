@@ -15,6 +15,7 @@
                     <label class="col-form-label" for="nombre"
                         >Nombre:
                     </label><input
+                        required
                         id="nombre"
                         bind:value={cliente.nombre}
                         class="nombre"
@@ -24,6 +25,7 @@
                     <label class="col-form-label" for="apellidos"
                         >Apellidos:
                     </label><input
+                        required
                         id="apellidos"
                         bind:value={cliente.apellidos}
                         class="apellidos"
@@ -33,6 +35,7 @@
                     <label class="col-form-label" for="direccion"
                         >Dirección:
                     </label><input
+                        required
                         id="direccion"
                         bind:value={cliente.direccion}
                         class="direccion"
@@ -40,6 +43,7 @@
                     <label class="col-form-label" for="categoria"
                         >Categoría:
                     </label><input
+                        required
                         id="categoria"
                         bind:value={cliente.categoria}
                         class="categoria"
@@ -58,29 +62,12 @@
         border-radius: 10px;
         margin: 10px;
     }
-    /*
-    .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
-    }
 
-    input {
-        background-color: inherit;
-        padding: 10px;
-        font-size: 14px;
-        color: black;
-        border: 0;
-        outline: none;
-        margin-left: 5px;
-        margin-bottom: 4px;
-        max-width: 140px;
-    } */
-
-    /* input:focus {
+    input:focus {
         background-color: wheat;
     }
 
-    input:required:invalid,
     input:focus:invalid {
         background-color: lightpink;
-    } */
+    }
 </style>

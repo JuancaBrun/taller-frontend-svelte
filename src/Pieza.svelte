@@ -16,6 +16,7 @@
                     <label class="col-form-label" for="nombre"
                         >Nombre:
                     </label><input
+                        required
                         id="nombre"
                         bind:value={pieza.nombre}
                         class="nombre"
@@ -25,6 +26,8 @@
                     <label class="col-form-label" for="precio"
                         >Precio:
                     </label><input
+                        type="number"
+                        required
                         id="precio"
                         bind:value={pieza.precio}
                         class="precio"
@@ -34,6 +37,7 @@
                     <label class="col-form-label" for="material"
                         >Material:
                     </label><input
+                        required
                         id="material"
                         bind:value={pieza.material}
                         class="material"
@@ -41,6 +45,7 @@
                     <label class="col-form-label" for="color"
                         >Color:
                     </label><input
+                        required
                         id="color"
                         bind:value={pieza.color}
                         class="color"
@@ -50,6 +55,8 @@
                     <label class="col-form-label" for="peso"
                         >Peso (g):
                     </label><input
+                        type="number"
+                        required
                         id="peso"
                         bind:value={pieza.peso}
                         class="peso"
@@ -68,29 +75,12 @@
         border-radius: 10px;
         margin: 10px;
     }
-    /*
-    .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
-    }
 
-    input {
-        background-color: inherit;
-        padding: 10px;
-        font-size: 14px;
-        color: black;
-        border: 0;
-        outline: none;
-        margin-left: 5px;
-        margin-bottom: 4px;
-        max-width: 140px;
-    } */
-
-    /* input:focus {
+    input:focus {
         background-color: wheat;
     }
 
-    input:required:invalid,
     input:focus:invalid {
         background-color: lightpink;
-    } */
+    }
 </style>

@@ -56,10 +56,7 @@
     });
 
     function insertar() {
-        if (
-            Object.keys(documento).length > 1 &&
-            Object.values(documento).every((x) => x !== undefined && x != "")
-        ) {
+        if (validar(documento)) {
             const opciones = {
                 method: "POST",
                 headers: {
@@ -110,6 +107,17 @@
             .catch((err) => ko());
     }
 
+    let validar = (documento) => {
+        let isValid = false;
+        if (
+            Object.keys(documento).length > 1 &&
+            Object.values(documento).every((x) => x !== undefined && x != "")
+        ) {
+            isValid = true;
+        }
+        return isValid;
+    };
+
     let ok = () => {
         OK.style.display = "block";
         setTimeout(() => (OK.style.display = "none"), 1500);
@@ -125,9 +133,6 @@
 
 <style>
     .btn {
-        /* font-weight: bold; */
-        /* padding-left: 20px; */
-        /* padding-right: 20px; */
         cursor: pointer;
         border-radius: 3px;
         font-size: 15px;
