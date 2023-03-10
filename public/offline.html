@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+</head>
+<!-- Se eliminan etiquetas html para resaltar lo esencial -->
+<!-- Consulta el código fuente. -->
+
+<body>
+    Estamos sin conexión
+
+    <script>
+        // Este código detecta cuando volvemos a tener conexión
+        // y en ese caso se carga automáticamente la página principal.
+        // El usuario no necesita refrescar la página.
+        window.addEventListener("online", () => (window.location.href = "/"));
+    </script>
+</body>
+
+</html>

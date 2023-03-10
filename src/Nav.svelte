@@ -7,7 +7,7 @@
         <li class="menu-item">
             <Link to="/"
                 ><span id="inicio-link" class="menu-link"
-                    ><img src="../favicon.ico" alt="" /></span
+                    ><img src="../favicon.png" alt="" /></span
                 ></Link
             >
         </li>
